@@ -27,8 +27,4 @@ export default class TasksRepository extends Repository<TaskEntity> {
     await this.save(task);
     return task;
   }
-
-  async deleteTask(id: string): Promise<void> {
-    await this.delete(id);
-  }
 }
