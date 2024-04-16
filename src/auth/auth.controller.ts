@@ -9,7 +9,6 @@ import { JoiValidationPipe } from 'src/validation/joi-validation.pipe';
 export class AuthController {
   constructor(private authService: AuthService) {}
   @Post('/signup')
-  @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
   signUp(
     @Body(new JoiValidationPipe(authValidationSchema))
     authCredentialsDto: AuthCredentialsDto,
